@@ -71,8 +71,8 @@ class RoomCharge extends CActiveRecord
 	{
 		return array(
 			'id' => 'ID',
-			'roomid' => 'Room Type',
-			'price'=> 'Price',
+			'roomid' => 'เลขที่ห้อง',
+			'price'=> 'ราคา',
 		);
 	}
 

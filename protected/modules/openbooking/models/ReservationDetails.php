@@ -24,16 +24,6 @@
 class ReservationDetails extends CActiveRecord
 {
 	/**
-	 * Returns the static model of the specified AR class.
-	 * @param string $className active record class name.
-	 * @return Reservationdetails the static model class
-	 */
-	public static function model($className=__CLASS__)
-	{
-		return parent::model($className);
-	}
-
-	/**
 	 * @return string the associated database table name
 	 */
 	public function tableName()
@@ -49,14 +39,14 @@ class ReservationDetails extends CActiveRecord
 		// NOTE: you should only define rules for those attributes that
 		// will receive user inputs.
 		return array(
-			array('reservationid, title, firstname, lastname, contactnumber, emailaddress, postaddress, city, county, country, postcode', 'required'),
+			array('reservationid, title, firstname, lastname, contactnumber, emailaddress, postaddress, city, county, country, postcode, otherinfo', 'required'),
 			array('reservationid', 'numerical', 'integerOnly'=>true),
-			array('title', 'length', 'max'=>3),
-			array('firstname, lastname, emailaddress, postaddress, city, county, country', 'length', 'max'=>255),
+			array('title', 'length', 'max'=>15),
+			array('firstname, lastname, emailaddress, postaddress, city, county, country, otherinfo', 'length', 'max'=>255),
 			array('contactnumber', 'length', 'max'=>20),
 			array('postcode', 'length', 'max'=>10),
 			// The following rule is used by search().
-			// Please remove those attributes that should not be searched.
+			// @todo Please remove those attributes that should not be searched.
 			array('id, reservationid, title, firstname, lastname, contactnumber, emailaddress, postaddress, city, county, country, postcode, otherinfo', 'safe', 'on'=>'search'),
 		);
 	}
@@ -80,29 +70,36 @@ class ReservationDetails extends CActiveRecord
 	{
 		return array(
 			'id' => 'ID',
-			'reservationid' => 'Reservationid',
-			'title' => 'Title',
-			'firstname' => 'First Name',
-			'lastname' => 'Last Name',
-			'contactnumber' => 'Contact Number',
-			'emailaddress' => 'Email Address',
-			'postaddress' => 'Post Address',
-			'city' => 'City',
+			'reservationid' => 'รหัสรายการ',
+			'title' => 'คำนำหน้าชื่อ',
+			'firstname' => 'ชื่อ',
+			'lastname' => 'นามสกุล',
+			'contactnumber' => 'เบอร์ติดต่อ',
+			'emailaddress' => 'Email',
+			'postaddress' => 'ที่อยู่ทางไปรษณีย์',
+			'city' => 'จังหวัด',
 			'county' => 'County',
-			'country' => 'Country',
-			'postcode' => 'Postcode',
-			'otherinfo' => 'Other Info',
+			'country' => 'ประเทศ',
+			'postcode' => 'รหัสไปรษณีย์',
+			'otherinfo' => 'ข้อมูลเสริม',
 		);
 	}
 
 	/**
 	 * Retrieves a list of models based on the current search/filter conditions.
-	 * @return CActiveDataProvider the data provider that can return the models based on the search/filter conditions.
+	 *
+	 * Typical usecase:
+	 * - Initialize the model fields with values from filter form.
+	 * - Execute this method to get CActiveDataProvider instance which will filter
+	 * models according to data in model fields.
+	 * - Pass data provider to CGridView, CListView or any similar widget.
+	 *
+	 * @return CActiveDataProvider the data provider that can return the models
+	 * based on the search/filter conditions.
 	 */
 	public function search()
 	{
-		// Warning: Please modify the following code to remove attributes that
-		// should not be searched.
+		// @todo Please modify the following code to remove attributes that should not be searched.
 
 		$criteria=new CDbCriteria;
 
@@ -123,5 +120,16 @@ class ReservationDetails extends CActiveRecord
 		return new CActiveDataProvider($this, array(
 			'criteria'=>$criteria,
 		));
+	}
+
+	/**
+	 * Returns the static model of the specified AR class.
+	 * Please note that you should have this exact method in all your CActiveRecord descendants!
+	 * @param string $className active record class name.
+	 * @return ReservationDetails the static model class
+	 */
+	public static function model($className=__CLASS__)
+	{
+		return parent::model($className);
 	}
 }

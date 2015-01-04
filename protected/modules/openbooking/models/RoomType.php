@@ -80,8 +80,8 @@ class RoomType extends CActiveRecord
 	{
 		return array(
 			'id' => 'ID',
-			'description' => 'Description',
-			'quantity' => 'Quantity',
+			'description' => 'ประเภท',
+			'quantity' => 'จำนวน',
 		);
 	}
 

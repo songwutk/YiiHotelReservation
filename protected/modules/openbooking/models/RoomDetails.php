@@ -74,17 +74,17 @@ class RoomDetails extends CActiveRecord
 	public function attributeLabels()
 	{
 		return array(
-			'title' => 'Title:',
-			'firstname' => 'First Name:',
-			'lastname' => 'Last Name:',
-			'contactnumber' => 'Contact Number:',
+			'title' => 'คำนำหน้า:',
+			'firstname' => 'ชื่อ:',
+			'lastname' => 'นามสกุล:',
+			'contactnumber' => 'เบอร์ติดต่อ:',
 			'emailaddress' => 'Email Address:',
-			'postaddress' => 'Post Address:',
-			'city' => 'City:',
-			'county' => 'County:',
-			'country' => 'Country:',
-			'postcode' => 'Postcode:',
-			'otherinfo' => 'Other info:',
+			'postaddress' => 'ที่อยู่:',
+			'city' => 'อำเภอ:',
+			'county' => 'จังหวัด:',
+			'country' => 'ประเทศ:',
+			'postcode' => 'รหัสไปรษณีย์:',
+			'otherinfo' => 'ข้อมูลเสริม:',
 		);
 	}
 

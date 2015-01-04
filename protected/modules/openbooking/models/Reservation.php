@@ -88,10 +88,13 @@ class Reservation extends CActiveRecord
 	
 		return array(
 			'id' => 'ID',
-			'roomid' => 'Room Type',
-			'datefrom' => 'Date From',
-			'dateto' => 'Date To',
-			'numberofnights' => 'Number of nights'
+			'roomid' => 'เลขที่ห้อง',
+			'datefrom' => 'เข้าพัก',
+			'numberofnights' => 'คืนที่พัก',
+			'dateto' => 'คืนห้อง',
+			'roomsavailable' => 'ห้องว่าง',
+			'onlinepayment' => 'ชำระเงิน Online',
+			'confirmreservation' => 'ยืนยันการจอง',
 		);
 	}
 
