@@ -10,16 +10,16 @@ $this->menu=array(
 );
 
 ?>
-<h1>Reservation Details</h1>
+<h1>รายละเอียดการจองห้อง</h1>
 
 <table class="table">
   <thead>
     <tr>
-      <th>Room Type</th>
-      <th>Date From</th>
-      <th>Date To</th>
-      <th>Online Payment</th>
-      <th>Rooms Left</th>
+      <th>ประเภทห้อง</th>
+      <th>เข้าพัก</th>
+      <th>คืนห้อง</th>
+      <th>ยอดชำระ</th>
+      <th>จำนวนคืนที่พัก</th>
     </tr>
   </thead>
   <tbody>

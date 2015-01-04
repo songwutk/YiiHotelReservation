@@ -7,10 +7,10 @@ $this->breadcrumbs=array(
 
 <div class="row">
 	<div class="span6">
-		<h1>Pay Now</h1>
+		<h1>โปรดชำระเงินเพื่อยืนยันการจอง</h1>
 	</div>
 	<div class="span6">
-		<h1>Reservation Details</h1>
+		<h1>แจ้งชำระเงินที่นี่</h1>
 	</div>
 </div>
 
@@ -19,17 +19,17 @@ $this->breadcrumbs=array(
 		<!-- Loop through payment options -->
 		<h3>PayPal</h3>
 		<h3>Google Checkout</h3>
-		<h3>Sage Pay</h3>
+		<h3>Bitcoin</h3>
 	</div>
 	
 	<div class="span6 well">
 		<table class="table">
 		  <thead>
 		    <tr>
-		      <th>Room Type</th>
-		      <th>Date From</th>
-		      <th>Date To</th>
-		      <th>Online Payment</th>
+		      <th>ประเภทห้องพัก</th>
+		      <th>วันเข้าพัก</th>
+		      <th>วันออก</th>
+		      <th>ยอดที่ต้องชำระ</th>
 		    </tr>
 		  </thead>
 		  <tbody>
